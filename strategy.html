@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strategy Tester — Smart BTC Breakout</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lightweight-charts@4.0.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body>
+  
+  <!-- ===== NAVBAR ===== -->
+  <nav class="topbar">
+    <div class="brand">💹 BTC AI Dashboard</div>
+
+
+    <div class="navlinks">
+      <a href="index.html">Dashboard</a>
+      <a href="strategy.html" class="active">Strategy Tester</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="about.html">About</a>
+    </div>
+
+    <div class="controls">
+      <button id="refresh-ai" class="glow-btn">🔄 Refresh</button>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT WRAPPER ===== -->
+  <main class="content">
+
+    <!-- Strategy Card -->
+    <section class="panel">
+      <h2>⚙️ Smart BTC Breakout Strategy</h2>
+      <p class="muted">
+        Max 2 trades/day • Target 3–5% • Stop Loss 10–12% • Uses RSI + ema10 • Avoids consolidation zones
+      </p>
+
+      <div class="action-panel">
+        <button id="simulate-btn" class="action-btn">▶️ Run Simulation</button>
+        <div id="sim-status" class="muted small-text">Status: Idle</div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-box"><span>Initial</span><strong id="sim-initial">$0</strong></div>
+        <div class="stat-box"><span>Final</span><strong id="sim-final">$0</strong></div>
+        <div class="stat-box"><span>Return</span><strong id="sim-return">0%</strong></div>
+        <div class="stat-box"><span>Trades</span><strong id="sim-trades">0</strong></div>
+        <div class="stat-box"><span>Win Rate</span><strong id="sim-win">0%</strong></div>
+      </div>
+    </section>
+
+    <!-- Projection -->
+    <section class="panel">
+      <h3>📊 Profit Projection</h3>
+      <p class="muted">Projected balance based on strategy rules & conditions.</p>
+      <div id="projection-summary" class="summary-box">No data yet</div>
+      <div id="projection-chart" class="chart"></div>
+    </section>
+
+    <!-- Main Chart -->
+    <section class="panel">
+      <h3>📈 Price Chart</h3>
+      <div id="strategy-chart" class="chart large"></div>
+      <div id="rsi-chart" class="chart small" style="margin-top:10px;"></div>
+    </section>
+
+    <!-- Trades Table -->
+    <section class="panel">
+      <h3>📄 Trades</h3>
+      <div id="strategy-trades-table" class="scroll-area"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js?v=9"></script>
+</body>
+</html>

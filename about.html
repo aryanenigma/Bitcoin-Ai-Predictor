@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | BTC AI Dashboard</title>
+
+    <!-- ======= Google Font ======= -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== Root Color Theme ===== */
+        :root {
+            --bg: #020617;
+            --panel: #0a1224;
+            --primary: #0ea5e9;
+            --green: #22c55e;
+            --text: #e5eef7;
+            --muted: #94a3b8;
+            --card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 18px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 18px;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--primary), var(--green));
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        /* ===== Card Layout ===== */
+        .grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            padding: 24px;
+            background: var(--panel);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(6px);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 15px;
+        }
+
+        .feature {
+            padding: 14px;
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .stack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--muted);
+            background: var(--card);
+        }
+
+        /* ===== Precautions Section ===== */
+        .warning {
+            margin-top: 15px;
+            border-left: 4px solid red;
+            padding-left: 14px;
+            font-size: 0.9rem;
+            color: #ffb4b4;
+        }
+
+        details summary {
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* ===== Responsive ===== */
+        @media(max-width: 920px){
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Title Section -->
+        <div class="title">
+            <div class="badge">BTC</div>
+            BTC AI Dashboard  
+        </div>
+
+        <p class="description">
+            BTC AI Dashboard is a self-hosted platform designed to predict Bitcoin short-term price movement using
+            machine learning, while providing real-time charts, technical indicators, and trading strategy backtesting.
+        </p>
+
+        <!-- Main Content -->
+        <div class="grid">
+            <!-- Left -->
+            <div class="card">
+                <h3>Core Features 🚀</h3>
+
+                <div class="feature-list">
+                    <div class="feature">📈 Real-time BTC chart with RSI & EMA</div>
+                    <div class="feature">🧠 AI Model for prediction</div>
+                    <div class="feature">🧪 Strategy Backtesting Engine</div>
+                    <div class="feature">📩 Exportable CSV & analysis files</div>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="card">
+                <h3>Tech Stack ⚙️</h3>
+
+                <div class="stack-tags">
+                    <div class="tag">Python</div>
+                    <div class="tag">FastAPI</div>
+                    <div class="tag">Machine Learning</div>
+                    <div class="tag">yFinance / CCXT</div>
+                    <div class="tag">JavaScript</div>
+                    <div class="tag">HTML / CSS</div>
+                    <div class="tag">SQLite / JSON</div>
+                </div>
+
+                <details class="warning">
+                    <summary>⚠️ Precautions & Disclaimer</summary>
+                    <p style="margin-top:10px">
+                        • Do NOT trade based only on predictions.  
+                        • Always test strategies with paper trading first.  
+                        • Never save or upload real exchange API keys publicly.  
+                        • Data sources may lag or differ from live exchange prices.
+                    </p>
+                </details>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Open Source • MIT License • <a href="https://github.com/aryanenigma/Ai-dashboard-for-BTC">View on GitHub</a>
+        </div>
+
+    </div>
+</body>
+</html>

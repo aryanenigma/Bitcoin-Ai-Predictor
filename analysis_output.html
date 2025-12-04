@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTC AI Analysis Output</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small layout improvements (keeps your theme intact) */
+        .analysis-container {
+            width: 92%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 20px;
+        }
+        .img-box {
+            background: #070d18;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .small-note {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        table th, table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        table th {
+            text-align: left;
+            opacity: 0.8;
+        }
+        .card-box {
+            background: #080b14;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="analysis-container">
+
+        <h1 style="text-align:center;">📊 BTC AI — Live Strategy Output</h1>
+
+        <div class="controls-row" style="display:flex; gap:10px; justify-content:center; margin:20px 0;">
+            <button id="refresh-all" class="glow-btn">🔄 Refresh All</button>
+            <button id="retrain-model" class="glow-btn">⚙️ Retrain Model</button>
+            <button id="download-logs" class="glow-btn">⬇️ Download Logs</button>
+        </div>
+
+        <div class="analysis-grid">
+
+            <!-- LEFT SECTION -->
+            <div>
+
+                <!-- Equity Chart -->
+                <div class="card-box">
+                    <div class="section-title">Equity Curve</div>
+                    <div class="img-box">
+                        <img id="equity-img" src="/equity_curve_small.png" style="width:100%; height:240px; object-fit:contain;">
+                        <div class="small-note">Auto-updated every 60 seconds</div>
+                    </div>
+                </div>
+
+                <!-- Win Loss -->
+                <div class="card-box">
+                    <div class="section-title">Win / Loss Pie</div>
+                    <div class="img-box">
+                        <img id="pie-img" src="/winloss_pie_small.png" style="width:180px;height:180px; object-fit:contain;">
+                        <div class="small-note">Based on strategy output</div>
+                    </div>
+                </div>
+
+                <!-- KPIs -->
+                <div class="card-box">
+                    <div class="section-title">Strategy Stats</div>
+
+                    <div class="metric-row" style="display:flex; justify-content:space-between;">
+                        <span>📈 Latest Balance</span>
+                        <span id="recent-balance" class="win">$0.00</span>
+                    </div>
+
+                    <div class="metric-row" style="display:flex; justify-content:space-between; margin-top:10px;">
+                        <span>🏆 Win Rate</span>
+                        <span id="win-rate">—</span>
+                    </div>
+
+                    <div class="metric-row" style="display:flex; justify-content:space-between; margin-top:10px;">
+                        <span>⏰ Best Hour to Trade</span>
+                        <span id="best-hour">—</span>
+                    </div>
+
+                    <div class="metric-row" style="display:flex; justify-content:space-between; margin-top:10px;">
+                        <span>💰 Top Profit Trade</span>
+                        <span id="top-pnl">—</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SECTION -->
+            <div>
+
+                <!-- Train Log -->
+                <div class="card-box">
+                    <div class="section-title">Model Training Log</div>
+                    <div id="train-log" class="log-box">No logs yet...</div>
+                </div>
+
+                <!-- Top Trades -->
+                <div class="card-box">
+                    <div class="section-title">Top Trades</div>
+
+                    <table id="top-trades">
+                        <thead>
+                            <tr>
+                                <th>Entry</th>
+                                <th>Exit</th>
+                                <th>Dir</th>
+                                <th>PnL%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="4" style="text-align:center; opacity:0.6;">No trades yet</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
