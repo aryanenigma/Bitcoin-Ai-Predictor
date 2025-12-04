@@ -43,13 +43,26 @@
       </div>
 
       <!-- Stats Grid -->
-      <div class="stats-grid">
-        <div class="stat-box"><span>Initial</span><strong id="sim-initial">$0</strong></div>
-        <div class="stat-box"><span>Final</span><strong id="sim-final">$0</strong></div>
-        <div class="stat-box"><span>Return</span><strong id="sim-return">0%</strong></div>
-        <div class="stat-box"><span>Trades</span><strong id="sim-trades">0</strong></div>
-        <div class="stat-box"><span>Win Rate</span><strong id="sim-win">0%</strong></div>
-      </div>
+      <div class="live-metrics">
+    <p>📈 Accuracy: <span id="accuracy">--</span></p>
+    <p>🏆 Win Rate: <span id="win_rate">--</span></p>
+    <p>💰 Profit %: <span id="profit_percent">--</span></p>
+    <p>📊 Total Trades: <span id="total_trades">--</span></p>
+    <p>⏳ Last Updated: <span id="last_updated">--</span></p>
+</div>
+<div style="display:none">
+    <span id="recent-balance"></span>
+    <span id="win-rate"></span>
+    <span id="best-hour"></span>
+    <span id="top-pnl"></span>
+
+    <table id="top-trades"></table>
+
+    <div id="train-log"></div>
+
+    <img id="equity-img">
+    <img id="pie-img">
+</div>
     </section>
 
     <!-- Projection -->
@@ -78,3 +91,4 @@
   <script src="script.js?v=9"></script>
 </body>
 </html>
+
